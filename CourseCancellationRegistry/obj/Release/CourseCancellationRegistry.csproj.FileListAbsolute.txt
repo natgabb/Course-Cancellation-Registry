@@ -1,0 +1,10 @@
+I:\315\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\bin\CourseCancellationRegistry.dll
+I:\315\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\bin\CourseCancellationRegistry.pdb
+I:\315\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\obj\Release\ResolveAssemblyReference.cache
+I:\315\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\obj\Release\CourseCancellationRegistry.dll
+I:\315\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\obj\Release\CourseCancellationRegistry.pdb
+I:\315C#\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\bin\CourseCancellationRegistry.dll
+I:\315C#\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\bin\CourseCancellationRegistry.pdb
+I:\315C#\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\obj\Release\ResolveAssemblyReference.cache
+I:\315C#\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\obj\Release\CourseCancellationRegistry.dll
+I:\315C#\Project2\Phase3\CourseCancellationRegistry\CourseCancellationRegistry\obj\Release\CourseCancellationRegistry.pdb

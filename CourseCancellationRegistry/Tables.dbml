@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="0932340" Class="TablesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=waldo.dawsoncollege.qc.ca;Initial Catalog=0932340;Persist Security Info=True;User ID=D0932340" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="_0932340ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CourseTimes" Member="CourseTimes">
+    <Type Name="CourseTime">
+      <Column Name="CourseTimesID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[End]" Member="End" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DayOfWeek" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Course_CourseTime" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Course" Member="Courses">
+    <Type Name="Course">
+      <Column Name="CourseID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Session" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Course_CourseTime" Member="CourseTimes" ThisKey="CourseID" OtherKey="CourseID" Type="CourseTime" />
+      <Association Name="Course_StudentCourse" Member="StudentCourses" ThisKey="CourseID" OtherKey="CourseID" Type="StudentCourse" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Student_Student" Member="Student2" ThisKey="StudentID" OtherKey="StudentID" Type="Student" Cardinality="One" />
+      <Association Name="Student_StudentCourse" Member="StudentCourses" ThisKey="StudentID" OtherKey="StudentID" Type="StudentCourse" />
+      <Association Name="Student_Student" Member="Student1" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudentCourse" Member="StudentCourses">
+    <Type Name="StudentCourse">
+      <Column Name="StudCourseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Student_StudentCourse" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Course_StudentCourse" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseCancelled" Member="CourseCancelleds">
+    <Type Name="CourseCancelled">
+      <Column Name="CourseCancelledID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCancelled" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(65)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
